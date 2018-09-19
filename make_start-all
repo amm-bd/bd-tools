@@ -1,0 +1,15 @@
+export bdshared_global_metricreaderuser='elasticmetricreader';
+
+export bdshared_global_elasticadminpass='b128b17f-139d-461f-a60a-2ce4b4adb22c';
+export bdshared_global_elasticadminuser='elastic';
+
+export bdshared_global_elasticwriteruser='elasticwriter';
+export bdshared_global_elasticwriterpass='b5381556-6fdd-42de-9c54-38b4b3a4fc3f';
+
+export bdshared_global_elasticuser='elasticreader';
+export bdshared_global_elasticpass='1c21288e-e7c0-49de-9865-f8cbaa6360c0';
+
+export bdshared_global_metricreaderuser='elasticmetricreader';
+export bdshared_global_metricreaderpass='2ac8bd74-c62d-4269-952e-df5e16772907';
+
+echo /etc/start-all.sh -r primary -c 10.32.1.76 -n 10.32.1.76 -u $bdshared_global_elasticuser -p \"$bdshared_global_elasticpass\" -z $bdshared_global_elasticadminuser -b \"$bdshared_global_elasticadminpass\" -q $bdshared_global_elasticwriteruser -e \"$bdshared_global_elasticwriterpass\" -t $bdshared_global_metricreaderuser -v \"$bdshared_global_metricreaderpass\"
