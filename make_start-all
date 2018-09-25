@@ -1,8 +1,15 @@
 #!/bin/env bash
 eval "$(/usr/sbin/bdconfig --getallenv)"
 
-echo /etc/start-all.sh -r primary -c 10.51.1.4 -n 10.51.1.4  \
--z $bdshared_elasticsearch_admin -b \"$bdshared_elasticsearch_adminpass\" \
--t $bdshared_elasticsearch_metricreader -v \"$bdshared_elasticsearch_metricreaderpass\" \
--u $bdshared_elasticsearch_reader -p \"$bdshared_elasticsearch_readerpass\" \
--q $bdshared_elasticsearch_writer -e \"$bdshared_elasticsearch_writerpass\"
+echo /etc/start-all.sh \
+-r primary \
+-c ${bds_network_primaryip} \
+-n ${bds_network_primaryip} \
+-z $bdshared_elasticsearch_admin \
+-b \"$bdshared_elasticsearch_adminpass\" \
+-t $bdshared_elasticsearch_metricreader \
+-v \"$bdshared_elasticsearch_metricreaderpass\" \
+-u $bdshared_elasticsearch_reader \
+-p \"$bdshared_elasticsearch_readerpass\" \
+-q $bdshared_elasticsearch_writer \
+-e \"$bdshared_elasticsearch_writerpass\"
