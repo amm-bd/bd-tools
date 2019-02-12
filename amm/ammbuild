@@ -1,0 +1,10 @@
+if [ -z "$1" ]
+  then
+    BUILD_NUM="1000"
+else
+    BUILD_NUM=$1
+fi
+
+echo "AMM:  Building with BUILD_NUM: $BUILD_NUM"
+export BUILD_TYPE=release BUILD_NUMBER=$BUILD_NUM; make distclean; make bundles-minimal
+
